@@ -1,0 +1,66 @@
+{
+    "primo_anno": {
+        "salsa": [
+            {
+                "nome": "video_1",
+                "url": "/primo_anno/video_1"
+            },
+            {
+                "nome": "video_2",
+                "url": "/primo_anno/video_2"
+            }
+        ],
+        "bachata": [
+            {
+                "nome": "video_3",
+                "url": "/primo_anno/video_3"
+            },
+            {
+                "nome": "video_4",
+                "url": "/primo_anno/video_4"
+            }
+        ]
+    },
+    "secondo_anno": {
+        "salsa": [
+            {
+                "nome": "70",
+                "url": "/secondo_anno/salsa_70"
+            },
+            {
+                "nome": "Medusa uomo",
+                "url": "/secondo_anno/salsa_medusa_uomo"
+            },
+            {
+                "nome": "Matador classico",
+                "url": "/secondo_anno/salsa_matador_classico"
+            },
+            {
+                "nome": "Matador uscita in linea",
+                "url": "/secondo_anno/salsa_matador_uscita_linea"
+            },
+            {
+                "nome": "Tisser & Double Tisser",
+                "url": "/secondo_anno/salsa_tisser_double_tisser"
+            }
+        ],
+        "bachata": [
+            {
+                "nome": "Doppia carisia",
+                "url": "/secondo_anno/bachata_doppia_carisia"
+            },
+            {
+                "nome": "Uomo passa dietro",
+                "url": "/secondo_anno/bachata_uomo_dietro"
+            },
+            {
+                "nome": "Rotazione lenta uomo",
+                "url": "/secondo_anno/bachata_rotazione_lenta_uomo"
+            },
+            {
+                "nome": "Carisia scivolata",
+                "url": "/secondo_anno/bachata_carisia_scivolata"
+            }
+        ]
+    }
+}

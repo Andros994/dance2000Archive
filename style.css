@@ -1,0 +1,365 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    overflow: hidden;
+}
+
+.content{
+    background-color: #141d2c;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 280px;
+    background-color: #2c3e50;
+    color: white;
+    padding: 20px;
+    overflow-y: auto;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    flex-shrink: 0;
+}
+
+.sidebar h1 {
+    font-size: 24px;
+    margin-bottom: 30px;
+    text-align: center;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 15px;
+    word-break: break-word;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* .menu-section {
+    margin-bottom: 20px;
+} */
+
+.menu-section-title {
+    font-weight: bold;
+    font-size: 16px;
+    color: #3498db;
+    padding: 10px 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: color 0.3s ease;
+    word-break: break-word;
+}
+
+.menu-section-title:hover {
+    color: #2980b9;
+}
+
+.menu-section-title.collapsed::before {
+    content: "▶";
+    flex-shrink: 0;
+}
+
+.menu-section-title.expanded::before {
+    content: "▼";
+    flex-shrink: 0;
+}
+
+.menu-items {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-left: 15px;
+    max-height: 500px;
+    overflow: hidden;
+    transition: max-height 0.3s ease, opacity 0.3s ease;
+    opacity: 1;
+}
+
+.menu-items.collapsed {
+    max-height: 0;
+    opacity: 0;
+}
+
+/* Subsection (Dance styles) */
+.menu-subsection {
+    margin-bottom: 10px;
+}
+
+.menu-subsection-title {
+    font-weight: 600;
+    font-size: 14px;
+    color: #ecf0f1;
+    padding: 8px 10px;
+    margin-left: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background-color: rgba(52, 152, 219, 0.2);
+    border-radius: 3px;
+    transition: background-color 0.3s ease;
+    word-break: break-word;
+}
+
+.menu-subsection-title:hover {
+    background-color: rgba(52, 152, 219, 0.35);
+}
+
+.menu-subsection-title.collapsed::before {
+    content: "▶";
+    flex-shrink: 0;
+}
+
+.menu-subsection-title.expanded::before {
+    content: "▼";
+    flex-shrink: 0;
+}
+
+.menu-subitems {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-left: 25px;
+    max-height: 300px;
+    overflow: hidden;
+    transition: max-height 0.3s ease, opacity 0.3s ease;
+    opacity: 1;
+}
+
+.menu-subitems.collapsed {
+    max-height: 0;
+    opacity: 0;
+}
+
+.menu-item {
+    padding: 10px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.1);
+    transition: background-color 0.2s ease, padding-left 0.2s ease;
+    white-space: normal;
+    word-break: break-word;
+    font-size: 14px;
+}
+
+.menu-item:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    padding-left: 16px;
+}
+
+.menu-item.active {
+    background-color: #3498db;
+    font-weight: bold;
+}
+
+.loading {
+    text-align: center;
+    color: #bdc3c7;
+    padding: 20px;
+}
+
+/* Main content */
+.content {
+    flex: 1;
+    padding: 40px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 100%;
+}
+
+.video-player {
+    background-color: #000;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    aspect-ratio: 16/9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-height: 70vh;
+}
+
+#videoPlayer {
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+}
+
+.video-info {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.video-info h2 {
+    color: #2c3e50;
+    margin-bottom: 10px;
+    font-size: 20px;
+    word-break: break-word;
+}
+
+.video-info p {
+    color: #666;
+    line-height: 1.6;
+    font-size: 14px;
+}
+
+/* Tablet (768px - 1024px) */
+@media (max-width: 1024px) {
+    .sidebar {
+        width: 240px;
+        padding: 15px;
+    }
+
+    .sidebar h1 {
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+
+    .content {
+        padding: 25px;
+        gap: 20px;
+    }
+
+    .menu-section-title {
+        font-size: 14px;
+    }
+
+    .menu-item {
+        font-size: 13px;
+        padding: 8px 10px;
+    }
+}
+
+/* Mobile (max 768px) */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        height: auto;
+        min-height: 100vh;
+    }
+
+    .sidebar {
+        width: 100%;
+        max-height: 50vh;
+        border-bottom: 2px solid #3498db;
+        overflow-y: auto;
+        flex-shrink: 0;
+        padding: 15px;
+    }
+
+    .sidebar h1 {
+        font-size: 18px;
+        margin-bottom: 15px;
+        padding-bottom: 10px;
+    }
+
+    .content {
+        flex: 1;
+        padding: 15px;
+        gap: 15px;
+        overflow-y: auto;
+        min-height: 50vh;
+    }
+
+    .video-player {
+        max-height: 50vh;
+        aspect-ratio: 16/9;
+    }
+
+    #videoPlayer {
+        object-fit: contain;
+    }
+
+    .video-info h2 {
+        font-size: 16px;
+        margin-bottom: 8px;
+    }
+
+    .video-info p {
+        font-size: 13px;
+    }
+
+    .menu-section-title {
+        font-size: 14px;
+        padding: 8px 0;
+    }
+
+    .menu-item {
+        font-size: 13px;
+        padding: 8px 10px;
+    }
+}
+
+/* Small mobile (max 480px) */
+@media (max-width: 480px) {
+    .sidebar {
+        max-height: 45vh;
+        padding: 12px;
+    }
+
+    .sidebar h1 {
+        font-size: 16px;
+        margin-bottom: 12px;
+        padding-bottom: 8px;
+    }
+
+    .content {
+        padding: 10px;
+        gap: 10px;
+        min-height: 55vh;
+    }
+
+    .video-player {
+        max-height: 45vh;
+    }
+
+    .video-info {
+        padding: 15px;
+    }
+
+    .video-info h2 {
+        font-size: 14px;
+        margin-bottom: 6px;
+    }
+
+    .video-info p {
+        font-size: 12px;
+    }
+
+    .menu-items {
+        margin-left: 10px;
+    }
+
+    .menu-item {
+        padding: 7px 8px;
+        font-size: 12px;
+    }
+
+    .menu-section-title {
+        font-size: 13px;
+        padding: 6px 0;
+    }
+}
