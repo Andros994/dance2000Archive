@@ -9,6 +9,10 @@ html, body {
     height: 100%;
 }
 
+#videoTitle{
+    color: white;
+}
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #f5f5f5;
