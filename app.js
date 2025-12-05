@@ -81,8 +81,8 @@ document.addEventListener('DOMContentLoaded', async () => {
                         itemDiv.classList.add('active');
 
                         // Update video player
-                        // Construct video path: /videos{lesson.url}.mp4
-                        const videoPath = `/videos${lesson.url}.mp4`;
+                        // Construct video path: use relative path instead of absolute
+                        const videoPath = `videos${lesson.url}.mp4`;
                         videoPlayer.src = videoPath;
                         
                         videoTitle.textContent = lesson.nome;
