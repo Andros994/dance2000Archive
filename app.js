@@ -81,7 +81,8 @@ document.addEventListener('DOMContentLoaded', async () => {
                         itemDiv.classList.add('active');
 
                         // Update video player
-                        // Construct video path: use relative path instead of absolute
+                        // Construct video path: videos/ + lesson.url + .mp4
+                        // lesson.url è come "/primo_anno/video_1", convertiamo in "videos/primo_anno/video_1.mp4"
                         const videoPath = `videos${lesson.url}.mp4`;
                         videoPlayer.src = videoPath;
                         
@@ -91,6 +92,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                         // Try to play
                         videoPlayer.play().catch(err => {
                             console.warn('Errore nel riprodurre il video:', err);
+                            console.warn('Percorso video tentato:', videoPath);
                         });
                     });
 
